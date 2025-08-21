@@ -63,7 +63,6 @@ class OrderView(viewsets.ViewSet):
         order=get_object_or_404(Order,pk=pk)
         items = order.items.all()
 
-    # Build a clear list of items for the AI
         items_text = "\n".join([
             f"- Product {item.product_id}, Quantity: {item.quantity}, Price: {item.price}"
             for item in items
